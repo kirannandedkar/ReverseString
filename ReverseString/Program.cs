@@ -5,16 +5,12 @@
 //Added Difficulty: Check if the given string is a palindrome.
 //(a palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar.)
 
-
-using System.Threading.Channels;
-
-ReverseString();
-
+//ReverseString();
+ReverseStringWithOwnImplementation();
 void ReverseString()
 {
-    string input = "";
     Console.WriteLine("Please input string");
-    input = Console.ReadLine();
+    string input = Console.ReadLine();
     //string reversedString = new string(input.Reverse().ToArray()); // I commented this purposefully because this i had googled
     IEnumerable<char> reversedArray = input.ToCharArray().Reverse();
     string reversedString = null;
@@ -23,6 +19,25 @@ void ReverseString()
         reversedString += str;
     }
     Console.WriteLine($"Reversed string is {reversedString}");
-    if (input == reversedString)
+    if (input.ToUpper() == reversedString.ToUpper())
+        Console.WriteLine("This is Palindrome");
+}
+
+
+void ReverseStringWithOwnImplementation()
+{
+    Console.WriteLine("Please input string");
+    string input = Console.ReadLine();
+    int inputStringLength = input.Length;
+    string reversedString = "";
+    char[] inputArray = input.ToCharArray();
+    for (int i = inputArray.Length-1; i < inputArray.Length; i--)
+    {
+        if(i<0) break;
+        reversedString+=inputArray[i];
+    
+    }
+    Console.WriteLine($"Reversed string is {reversedString}");
+    if (input.ToUpper() == reversedString.ToUpper())
         Console.WriteLine("This is Palindrome");
 }
