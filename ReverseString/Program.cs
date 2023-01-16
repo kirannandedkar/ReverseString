@@ -30,7 +30,6 @@ void ReverseStringWithOwnImplementation()
     string input = Console.ReadLine();
     int inputStringLength = input.Length;
     string reversedString = "";
-    char[] inputArray = input.ToCharArray();
     for (int i = input.Length-1; i >= 0; i--)
     {
         reversedString+= input[i];
