@@ -31,10 +31,9 @@ void ReverseStringWithOwnImplementation()
     int inputStringLength = input.Length;
     string reversedString = "";
     char[] inputArray = input.ToCharArray();
-    for (int i = inputArray.Length-1; i < inputArray.Length; i--)
+    for (int i = input.Length-1; i >= 0; i--)
     {
-        if(i<0) break;
-        reversedString+=inputArray[i];
+        reversedString+= input[i];
     
     }
     Console.WriteLine($"Reversed string is {reversedString}");
