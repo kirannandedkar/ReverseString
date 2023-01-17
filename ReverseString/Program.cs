@@ -6,7 +6,8 @@
 //(a palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar.)
 
 //ReverseString();
-ReverseStringWithOwnImplementation();
+//ReverseStringWithOwnImplementation();
+ReverseStringWithForwardLoop();
 void ReverseString()
 {
     Console.WriteLine("Please input string");
@@ -28,7 +29,6 @@ void ReverseStringWithOwnImplementation()
 {
     Console.WriteLine("Please input string");
     string input = Console.ReadLine();
-    int inputStringLength = input.Length;
     string reversedString = "";
     for (int i = input.Length-1; i >= 0; i--)
     {
@@ -37,5 +37,20 @@ void ReverseStringWithOwnImplementation()
     }
     Console.WriteLine($"Reversed string is {reversedString}");
     if (input.ToUpper() == reversedString.ToUpper())
+        Console.WriteLine("This is Palindrome");
+}
+
+void ReverseStringWithForwardLoop()
+{
+    Console.WriteLine("Please input string");
+    string input = Console.ReadLine();
+    string reversedString = "";
+    for (int i =1; i <= input.Length; i++)
+    {
+        reversedString += input[input.Length - i];
+
+    }
+    Console.WriteLine($"Reversed string is {reversedString}");
+    if (input.Equals(reversedString, StringComparison.OrdinalIgnoreCase))
         Console.WriteLine("This is Palindrome");
 }
